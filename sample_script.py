@@ -22,6 +22,7 @@ search.send_keys('table')
 sleep(4)
 
 # click search button
+
 driver.find_element(By.NAME, 'btnK').click()
 
 # verify search results
