@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from time import sleep
 
 BEST_SELLER_PAGE = (By.CSS_SELECTOR,'a[href="/gp/bestsellers/?ref_=nav_cs_bestsellers"]')
-LINK_AMOUNT = (By.CSS_SELECTOR,'._p13n-zg-nav-tab-all_style_zg-tabs-li-div__1YdPR')
+LINK_AMOUNT = (By.CSS_SELECTOR,'div.celwidget.c-f ul a')
 @when('Click on BestSeller')
 def open_best_seller(context):
     context.driver.find_element(*BEST_SELLER_PAGE).click()
