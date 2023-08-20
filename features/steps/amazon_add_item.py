@@ -31,7 +31,7 @@ def select_product(context):
 
 @then('Add it to the cart')
 def adding_to_cart(context):
-   context.driver.wait.until(EC.element_to_be_clickable(ADD_TO_CART)).click()
+    context.driver.wait.until(EC.element_to_be_clickable(ADD_TO_CART)).click()
     #context.driver.find_element(*ADD_TO_CART).click()
 
     context.driver.wait.until(EC.element_to_be_clickable(CART_INPUT_BOX),message='Cart Input btn not clickable').click()
