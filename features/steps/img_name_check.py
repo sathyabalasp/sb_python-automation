@@ -3,22 +3,35 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
 
-PRODUCT_NAMES = (By.CSS_SELECTOR,'span.a-size-base-plus.a-color-base.a-text-normal')
-PRODUCT_IMAGE = (By.CSS_SELECTOR,'div.a-section.aok-relative.s-image-square-aspect img.s-image')
+SEARCH_RESULT = (By.XPATH,'//span[@class ="a-color-state a-text-bold"]')
+PRODUCT_PRICE = (By.XPATH, "//div[@data-component-type='s-search-result']//a[.//span[@class='a-price']]")
+SEARCH_RESULTS = (By.CSS_SELECTOR, "[data-component-type='s-search-result']")
+PRODUCT_NAME = (By.CSS_SELECTOR, 'h2 span.a-text-normal')
+PRODUCT_IMAGE = (By.CSS_SELECTOR, ".s-image[data-image-latency='s-product-image']")
 
-@then('Verify every product has name and image')
-def verifying_product_name_and_image(context):
-    product_name = []
-    product_image = []
 
-    names = context.driver.find_elements(*PRODUCT_NAMES).text
-    
-    for name in names[:24]:
+# @when('Click on the first product')
+# def click_first_product(context):
+#      context.driver.find_element(*PRODUCT_PRICE).click()
+#      sleep(2)
 
-        current_name = name
-        product_name.append(current_name)
-        current_image = context.driver.find_element(*PRODUCT_IMAGE).get_attribute(product_image)
-        product_image.append(current_image)
 
-    print(product_name)
+@then('Verify search result is {expected_result}')
+def verify_search_result(context, expected_result):
+     actual_result = context.driver.find_element(*SEARCH_RESULT).text
+     assert expected_result == actual_result, f'Error, expected {expected_result} did not match actual {actual_result}'
+     # context.app.search_result_page.verify_search_result(expected_result)
+
+
+@then('Verify every product has a name and  an image')
+def verify_products_name_img(context):
+    all_products = context.driver.find_elements(*SEARCH_RESULTS)
+
+    for product in all_products:
+        product_name = product.find_element(*PRODUCT_NAME).text
+        print(product_name)
+        assert product_name, 'Product title not shown'
+        product.find_element(*PRODUCT_IMAGE)
+

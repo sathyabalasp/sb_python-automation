@@ -18,9 +18,9 @@ SUBTOTAL_TEXT = (By.CSS_SELECTOR,'#sc-subtotal-label-buybox')
 
 @when('Input the product')
 def Enter_Product_name(context):
-    context.driver.find_element(*AMAZON_SEARCH_INPUT).send_keys('cell phone')
-    context.driver.find_element(*AMAZON_SEARCH_BIN).click()
-
+    # context.driver.find_element(*AMAZON_SEARCH_INPUT).send_keys('cell phone')
+    # context.driver.find_element(*AMAZON_SEARCH_BIN).click()
+    context.app.header.search_product('cell phone')
 
 
 @then('Select one product')
