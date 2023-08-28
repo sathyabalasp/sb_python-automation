@@ -80,8 +80,105 @@ def fibonacci_sequence(n):
 print(fibonacci_sequence(7))
 
 
+def swap_variable(a:int,b:int):
+    print(f"a = {a},b = {b}")
+    team = a
+    a = b
+    b = team
+
+    print(f"a = {a}, b = {b}")
+
+test1 = 10
+test2 = 20
+print(swap_variable(test1,test2))
+
+def swap_variables2(a:int,b:int):
+    print(f"a = {a},b = {b}")
+    a = a + b
+    b = a - b
+    a = a - b
+    print(f"a = {a}, b = {b}")
+
+print(swap_variables2(test1,test2))
+
+def fizzbuzz(n):
+    for i in range(1, n+1):
+         if i % 3 == 0 and i % 5 == 0:
+             print('Fizz')
+         elif i % 3 == 0:
+             print('Buzz')
+         elif i % 5 == 0:
+             print('FizzBuzz')
+         else:
+             print(i)
+
+fizzbuzz(10)
+
+def factorial(n:int):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    print(f' The factorial of {n} is {result}')
 
 
+factorial(2)
+
+# def sum_of_three_digit_number(n:int):
+#     value = 0
+#     for number in n:
+#         current_n = number % 10
+#         value = current_n + value
+#         print(value)
+#         number = number // 10
+#
+#
+# print(sum_of_three_digit_number(234))
 
 
+def reverse_interger(n):
+     st1 = str(n)
+
+     if st1[0] == '-':
+         return int("-" + st1[:0:-1])
+     else:
+         return int(st1[::-1])
+
+
+print(reverse_interger(-234))
+
+def is_anagram(s1:str, s2:str):
+    if len(s1) != len(s2):
+        return False
+    if sorted(s1) == sorted(s2):
+        return True
+    else:
+        return False
+
+print(is_anagram('cat','tac'))
+
+def is_palindrom(s1:str):
+
+    s2 = s1[::-1]
+    if s1 == s2:
+        return True
+    else:
+        return False
+
+print(is_palindrom('madam'))
+print(is_palindrom('bala'))
+
+
+def almost_palindrom(s:str):
+    word=len(s)
+    word_2=0
+    for i in range(word):
+       new_s = s[:i] + s[i + 1]
+       if new_s == new_s[-(i+1)]:
+          word = word + 1
+       if word_2 == word:
+         return True
+       else:
+          return False
+
+print(almost_palindrom('madami'))
 
