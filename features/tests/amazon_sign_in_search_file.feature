@@ -8,16 +8,15 @@ Feature: Test Scenarios for SignIn
 
   Scenario:Sign In page can be opened from SignIn popup
      Given Open Amazon page
-     When Click Returns and Orders
      When Click on button from SignIn popup
      Then Verify Sign in page opened
 
   Scenario:Amazon users see sign in button
      Given Open amazon page
-     When Click Returns and Orders
      Then Verify Sign in is clickable
      When wait for 3 sec
      Then Verify Sign in is clickable
+     When wait for 3 sec
      Then Verify Sign in disappears
 
 

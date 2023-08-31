@@ -35,11 +35,11 @@ class Header(Page):
 
 
      def verify_signin_btn_clickable(self):
-        self.wait_for_element_clickable(*self.SEARCH_BTN)
+        self.wait_for_element_clickable(*self.SIGNIN_BTN)
 
 
      def verify_signin_btn_disappear(self):
-        self.verify_signin_btn_disappear(*self.SIGNIN_BTN)
+        self.wait_for_element_disappear(*self.SIGNIN_BTN)
 
 
 

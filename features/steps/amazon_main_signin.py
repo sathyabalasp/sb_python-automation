@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
-SEARCH_FIELD = (By.ID, 'twotabsearchtextbox')
+# SEARCH_FIELD = (By.ID, 'twotabsearchtextbox')
 @given('Open Amazon page')
 def open_amazon(context):
     context.app.main_page.open_main()

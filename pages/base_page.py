@@ -27,18 +27,18 @@ class Page:
         e = self.driver.find_element(*locator)
         e.send_keys(text)
 
-    def wait_for_element_clickable(self,*locator):
+    def wait_for_element_clickable(self, *locator):
         self.wait.until(
             EC.element_to_be_clickable(locator),
             message=f'Element not clickable:{locator}')
 
-    def wait_for_element_clickable_click(self,*locator):
+    def wait_for_element_clickable_click(self, *locator):
         e = self.wait.until(
             EC.element_to_be_clickable(locator),
              message= f'Element not clickable:{locator}')
         e.click()
 
-    def wait_for_element_disappear(self,*locator):
+    def wait_for_element_disappear(self, *locator):
         self.wait.until(
             EC.invisibility_of_element_located(locator),
             message= f'Element did not disappear:{locator}'

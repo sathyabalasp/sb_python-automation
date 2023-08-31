@@ -7,6 +7,6 @@ class Sign_in_page(Page):
 
 
     def verify_signing_in_page(self):
-        self.verify_text('Sign in',*self.SIGN_IN_PAGE_CHECK)
+        self.verify_text('Sign in', *self.SIGN_IN_PAGE_CHECK)
         self.driver.find_element(*self.EMAIL_INPUT)
-        self.verify_partial_url('ap/signin')
+        self.verify_partial_url('ap/signin?openid')
