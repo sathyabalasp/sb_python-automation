@@ -6,6 +6,8 @@ Feature: Test Scenario for adding a product
    Given Open Amazon page
    When Input the product
    Then Select one product
+   When wait for 3 sec
    Then Add it to the cart
-   Then Verify product in cart
+   When wait for 3 sec
+   Then Verify Subtotal (1 item): number of present
 

@@ -9,12 +9,11 @@ JEAN_CURRENT_COLOR = (By.CSS_SELECTOR, '#variation_color_name .selection')
 def open_amazon_product(context, product_id):
     context.driver.get(f'https://www.amazon.com/dp/{product_id}/')
 
-@then('Verify user can click and see the colors of product')
+@then('Verify user can click through colors')
 def verify_clicking_colors(context):
-    jean_colors = ['Black', 'Blue Over Dye', 'Dark Blue Vintage', 'Dark Indigo', 'Dark Wash', 'Indigo Wash',
-                   'Light Wash', 'Medium Blue Vintage', 'Medium Wash', 'Rinsed', 'Vintage Wash', 'Washed Black',
-                   'Bright White', 'Dark Khaki Brown', 'Light Khaki Brown', 'Olive', 'Light Blue Vintage',
-                   'Washed Grey', 'Sage Green']
+    jean_colors = ['Light Wash', 'Black', 'Blue Over Dye', 'Dark Blue Vintage', 'Dark Indigo', 'Dark Wash', 'Indigo Wash',
+                    'Medium Blue Vintage', 'Medium Wash', 'Rinsed', 'Vintage Wash', 'Washed Black',
+                   'Bright White', 'Dark Khaki Brown', 'Light Khaki Brown']
     actual_jean_colors = []
 
     colors = context.driver.find_elements(*JEAN_COLOR_OPTIONS)

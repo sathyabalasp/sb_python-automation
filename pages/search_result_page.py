@@ -4,14 +4,23 @@ from pages.base_page import Page
 
 class SearchResultPage(Page):
      SEARCH_RESULT = (By.CSS_SELECTOR, '.a-color-state.a-text-bold')
-     SIGN_IN_PAGE_CHECK = (By.XPATH, "//h1[@Class='a-spacing-small']")
-     def verify_search_result(self, expected_text):
-         actual_text = self.find_element(*self.SEARCH_RESULT).text
-         assert actual_text == expected_text,  \
-             f'Error, expected {expected_text} did not match actual {actual_text}'
+     EMPTY_CART_TEXT = (By.CSS_SELECTOR, '.a-row.sc-your-amazon-cart-is-empty')
+     ADD_TO_CART = (By.ID, 'add-to-cart-button')
+     NO_THANKS = (By.CSS_SELECTOR, '.a-button-input[aria-labelledby="attachSiNoCoverage-announce"]')
+     GOTO_CART_PAGE = (By.CSS_SELECTOR, '[href="/cart?ref_=sw_gtc"]')
+     SUBTOTAL_TEXT = (By.CSS_SELECTOR, '#sc-subtotal-label-buybox')
+     def verify_search_result(self, result):
+         self.verify_text(result, *self.SEARCH_RESULT)
 
 
-     # def Verify_signing_in_page(self,text):
-     #     actual_text1 = self.input_text(*self.SIGN_IN_PAGE_CHECK)
-     #     assert actual_text1 == text, \
-     #         f'Error, expected {text} did not match actual {actual_text1}'
+     def verifying_cart_is_empty(self, text):
+         self.verify_text(text,*self.EMPTY_CART_TEXT)
+
+
+     def verify_number_of_items_in_cart(self,text):
+        self.verify_text(text,*self.SUBTOTAL_TEXT)
+
+     def add_product_to_cart(self):
+         self.click(*self.ADD_TO_CART)
+         self.click(*self.NO_THANKS)
+         self.click(*self.GOTO_CART_PAGE)

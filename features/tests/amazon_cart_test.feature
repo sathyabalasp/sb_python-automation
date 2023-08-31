@@ -4,4 +4,4 @@ Feature: Verifying Amazon Cart
   Scenario: verifies that users Amazon Cart is empty
     Given Open amazon page
     When clicks on the cart icon
-    Then Verify Cart is empty
+    Then Verify Your Amazon Cart is empty text present

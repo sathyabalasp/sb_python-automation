@@ -1,9 +1,11 @@
 # Created by Sathyaprabha  at 8/9/23
 Feature: open amazon BestSellers page
-And verify there are links
+And verify top menu pages are opening
 
 
-  Scenario:  opening amazon BestSellers page and verify there are 5 links in the page
+  Scenario:  Opening Amazon BestSellers page and verify top menu pages are opening
     Given Open Amazon page
     When Click on BestSeller
-    Then Verify this page has 5 Links
+    Then Verify this page has 5 top menu
+    Then Verify each 5 top menus page opens
+
