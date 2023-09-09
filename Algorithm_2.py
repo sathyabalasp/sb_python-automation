@@ -2,14 +2,8 @@
 # Example: -189 -> -981
 
 def reverse_integer(n: int):
-
       st1 = str(n)
-
-      if st1[0] == '-':
-         return int("-" + st1[:0:-1])
-      else:
-         return int(st1[::-1])
-
+      return int("-" + st1[:0:-1])
 
 print(reverse_integer(-189))
 
@@ -18,10 +12,10 @@ print(reverse_integer(-189))
 
 
 def are_anagrams(s1: str, s2: str):
-    s1 = s1.lower()
+
     if len(s1) != len(s2):
         return False
-    if sorted(s1) == sorted(s2):
+    if sorted(s1.lower()) == sorted(s2.lower()):
         return True
     else:
         return False
@@ -68,3 +62,6 @@ def shortcut(s: str):
     return(result)
 
 print(shortcut("elephant"))
+
+
+

@@ -17,11 +17,33 @@ class Page:
         return self.driver.find_element(*locator)
 
 
-    def find_elements(self,*locator):
+    def find_elements(self, *locator):
         return self.driver.find_elements(*locator)
 
-    def get_text(self,*locator):
+    def get_text(self, *locator):
         return self.driver.find_element(*locator).text
+
+    def get_current_window(self):
+        return self.driver.current_window_handle
+
+    def get_windows(self):
+        windows = self.driver.window_handles
+        print(windows)
+        return windows
+
+    def switch_to_new_windows(self):
+        self.wait.until(EC.new_window_is_opened)
+        all_windows = self.driver.window_handles
+        print(all_windows)
+        print(f'Switching to {all_windows[1]}')
+        self.driver.switch_to.window(all_windows[1])
+
+    def switch_to_window(self, window_id):
+        print(f'Switching to {window_id}')
+        self.driver.switch_to.window(window_id)
+
+    def close_page(self):
+        self.driver.close()
 
     def input_text(self, text, *locator):
         e = self.driver.find_element(*locator)

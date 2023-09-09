@@ -7,5 +7,5 @@ And verify top menu pages are opening
     Given Open Amazon page
     When Click on BestSeller
     Then Verify this page has 5 top menu
-    Then Verify each 5 top menus page opens
+    Then Verify each 5 top menus pages opens
 

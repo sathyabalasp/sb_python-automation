@@ -15,7 +15,7 @@ def return_orders(context):
 
 @when('Click on button from SignIn popup')
 def click_signin_from_popup(context):
-    context.app.header.click_signin_from_popup()
+    context.app.header.clicking_signin_from_popup()
 
 
 @when('wait for 3 sec')

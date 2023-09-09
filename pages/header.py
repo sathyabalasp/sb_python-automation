@@ -30,7 +30,7 @@ class Header(Page):
          self.click(*self.BEST_SELLER_BTN)
 
 
-     def click_signin_from_popup(self):
+     def clicking_signin_from_popup(self):
         self.wait_for_element_clickable_click(*self.SIGNIN_BTN)
 
 

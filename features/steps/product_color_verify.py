@@ -1,13 +1,15 @@
 from behave import given, when, then
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-
+from time import sleep
 
 JEAN_COLOR_OPTIONS = (By.CSS_SELECTOR, '#variation_color_name li')
 JEAN_CURRENT_COLOR = (By.CSS_SELECTOR, '#variation_color_name .selection')
 @given('Open Amazon product {product_id} page')
 def open_amazon_product(context, product_id):
-    context.driver.get(f'https://www.amazon.com/dp/{product_id}/')
+    context.driver.get('https://www.amazon.com/dp/{product_id}')
+    sleep(3)
+    context.driver.refresh()
 
 @then('Verify user can click through colors')
 def verify_clicking_colors(context):
