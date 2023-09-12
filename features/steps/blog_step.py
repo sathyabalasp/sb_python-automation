@@ -1,4 +1,4 @@
-from behave import *
+from behave import given, when, then
 
 @then('Verify blog is opened')
 def verify_opened(context):
@@ -6,8 +6,8 @@ def verify_opened(context):
 
 @then('Close blog')
 def close_blog(context):
-    context.app.blog.close_blog()
+    context.app.blog.close_page()
 
 @then('Returns to original window')
 def return_to_original_window(context):
-    context.app.blog.return_to_original_window()
+    context.app.blog.switch_to_window(context.original_window)

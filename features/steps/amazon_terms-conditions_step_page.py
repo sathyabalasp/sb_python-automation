@@ -1,8 +1,4 @@
 from behave import given, when, then
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.wait import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
-
 
 @given('Open Amazon Term and Conditions page')
 def open_term_condition_page(context):

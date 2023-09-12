@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import Page
 
-class Best_seller_page(Page):
+class BestSellerPage(Page):
 
     TOP_MENU = (By.CSS_SELECTOR, 'div.celwidget.c-f ul a')
     TEXT_TOP_MENU = (By.ID, 'zg_banner_text')

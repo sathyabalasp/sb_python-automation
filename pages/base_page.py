@@ -1,5 +1,5 @@
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 class Page:
 
@@ -17,8 +17,9 @@ class Page:
         return self.driver.find_element(*locator)
 
 
-    def find_elements(self, *locator):
+    def find_elements (self, *locator):
         return self.driver.find_elements(*locator)
+
 
     def get_text(self, *locator):
         return self.driver.find_element(*locator).text
@@ -31,7 +32,7 @@ class Page:
         print(windows)
         return windows
 
-    def switch_to_new_windows(self):
+    def switch_to_new_window(self):
         self.wait.until(EC.new_window_is_opened)
         all_windows = self.driver.window_handles
         print(all_windows)

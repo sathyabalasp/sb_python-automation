@@ -8,7 +8,7 @@ class MainPage(Page):
          sleep(3)
          self.driver.refresh()
 
-     def open_amazon_product_page(self):
-         self.driver.get('https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ')
-         sleep(3)
-         self.driver.refresh()
+     # def open_amazon_product_page(self):
+     #     self.driver.get('https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ')
+     #     sleep(3)
+     #     self.driver.refresh()

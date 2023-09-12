@@ -11,45 +11,51 @@ def browser_init(context):
     :param context: Behave context
     """
 
-    service = Service(executable_path='/Users/balamurugann/Automation_QA/sb_python-automation/chromedriver')
+    service = Service(executable_path='/Users/balamurugann/Automation_QA/sb_python_automation/chromedriver')
     context.driver = webdriver.Chrome(service=service)
-
+    context.driver.maximize_window()
     ### OTHER BROWSERS ###
-    # service = Service(executable_path='/Users/svetlanalevinsohn/careerist/15-python-selenium-automation/geckodriver')
+    # service = Service(executable_path='/Users/balamurugann/Automation_QA/sb_python-automation/geckodriver')
     # context.driver = webdriver.Firefox(service=service)
     # context.driver = webdriver.Safari()
 
-    ## HEADLESS MODE ####
+    # HEADLESS MODE ####
     # options = webdriver.ChromeOptions()
     # options.add_argument('--headless')
-    # service = Service(executable_path='/Users/svetlanalevinsohn/careerist/15-python-selenium-automation/chromedriver')
+    # service = Service(executable_path='/Users/balamurugann/Automation_QA/sb_python-automation/chromedriver')
     # context.driver = webdriver.Chrome(options=options, service=service)
 
-    ### BROWSERSTACK ###
-    # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
-    # bs_user = ''
-    # bs_key = ''
+    ## BROWSERSTACK ###
+    # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settingspip3 install -r requirements.txt
+    # bs_user = 'sathyaprabhasoun_cKy6sq'
+    # bs_key = 'Co5KS7YR3GDYPpYi8Hkc'
     # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
     #
     # options = Options()
     # bstack_options = {
-    #     'os': 'Windows',
-    #     'osVersion': '10',
-    #     'browserName': 'Firefox',
+    #     os: OS X
+    #     osVersion: Monterey
+    #     browserName: Chrome
+    #     browserVersion: latest
+    #     browserstackLocal: true
+    #     buildName: browserstack-build-1
+    #     projectName: BrowserStack Sample
     #     'sessionName': scenario_name
     # }
     # options.set_capability('bstack:options', bstack_options)
     # context.driver = webdriver.Remote(command_executor=url, options=options)
-    context.driver.maximize_window()
+
+    # context.driver.maximize_window()
     context.driver.implicitly_wait(4)
     context.driver.wait = WebDriverWait(context.driver, 10)
 
     context.app = Application(context.driver)
 
 def before_scenario(context, scenario):
+
     print('\nStarted scenario: ', scenario.name)
     browser_init(context)
-
+    # browser_init(context, scenario.name)
 
 def before_step(context, step):
     print('\nStarted step: ', step)
@@ -63,3 +69,4 @@ def after_step(context, step):
 def after_scenario(context, feature):
     context.driver.delete_all_cookies()
     context.driver.quit()
+
