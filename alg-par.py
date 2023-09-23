@@ -147,3 +147,124 @@ print(max_sum_rotation(arr, n))
 #
 # d = [2, 56, 7, 21, 22, 19, 26]
 # print(peaks(d))
+
+# def sum_and_mult(arr: list):
+#
+#     sum_result = 0
+#     mult_result = 1
+#     for number in arr:
+#         sum_result += number
+#         mult_result *= number
+#     return sum_result, mult_result
+# d = [2, 56, 7, 21, 22, 19, 26]
+# print(sum_and_mult(d))
+
+# Max item and index: solution
+
+#
+# # Best time to buy and sell stock: solution
+# def buy_and_sell_stock(prices: list):
+#     max_profit = curr_profit = 0
+#     for i in range(len(prices) - 1):
+#         curr_profit = curr_profit + prices[i+1] - prices[i]
+#         if curr_profit > max_profit:
+#             max_profit = curr_profit
+#         if curr_profit < 0:
+#             curr_profit = 0
+#     return max_profit
+def sum_between_range(arr, min_val, max_val):
+    total_sum = 0
+    for num in arr:
+        if min_val <= num <= max_val:
+            total_sum += num
+    return total_sum
+
+my_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+min_value = 3
+max_value = 7
+
+
+print(sum_between_range(my_array,min_value,max_value))
+
+
+def increment_digits(digits):
+    carry = 1  # Initialize carry to 1 to add 1 to the least significant digit
+    n = len(digits)
+
+    for i in range(n - 1, -1, -1):
+        total = digits[i] + carry
+        digits[i] = total % 10  # Update the current digit
+        carry = total // 10  # Calculate the carry for the next iteration
+
+    # If there is still a carry left after the loop, insert it as the new most significant digit
+    if carry:
+        digits.insert(0, carry)
+
+# Example usage:
+input_digits = [1, 2, 9]
+increment_digits(input_digits)
+print(input_digits)  # Output will be [1, 3, 0]
+# This program starts by initializing a carry of 1 and then iterates through the list of digits from right to left. It adds the carry to the current digit, updates the current digit to the remainder of the sum, and calculates the carry for the next iteration. If there's still a carry left after the loop, it is inserted as the new most significant digit.
+#
+# This approach allows you to update the list to represent the integer D + 1.
+
+
+def plus_one(digits):
+    # Add 1 to the last digit
+    digits[-1] += 1
+
+    # Loop through the digits in reverse order
+    for i in range(len(digits) - 1, 0, -1):
+        # Check for carry-over
+        if digits[i] == 10:
+            digits[i] = 0
+            digits[i - 1] += 1
+        else:
+            break  # No more carry-over, exit the loop
+
+    # Special case: If the first digit is 10, change it to 1 and add a 0 at the end
+    if digits[0] == 10:
+        digits[0] = 1
+        digits.append(0)
+
+# Example usage:
+input_digits = [1, 2, 9]
+plus_one(input_digits)
+print(input_digits)  # Output will be [1, 3, 0]
+# This program follows the steps you outlined:
+#
+# It starts by adding 1 to the last digit.
+# Then, it iterates through the digits in reverse, checking for carry-over (when a digit becomes 10). If there's a carry-over, it sets the current digit to 0 and adds 1 to the previous digit.
+# It continues this process until there are no more carry-overs or until it reaches the most significant digit.
+# Finally, if the first digit is 10 after the loop, it changes it to 1 and appends a 0 at the end.
+# This program will correctly update the list to represent the integer D + 1.
+adj = ["red","ripe","tasty"]
+fruits = ["apple","banana","cherry"]
+
+for i in adj:
+    for j in fruits:
+        print(i + ' ' + j)
+
+
+def sort_list(arr:list):
+    for i in range(len(arr)):
+        min_index = i
+        for j in range(i+1, len(arr)):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    return arr
+
+test_data = [4,2,1,7,5,3]
+
+print(sort_list(test_data))
+
+def bubble_sort_list(arr:list):
+    for i in range(len(arr)):
+        for j in range(len(arr) - 1 -i ):
+            if arr[j] > arr[j+1]:
+               arr[j], arr[j+1] = arr[j+1], arr[i]
+    return arr
+
+print(bubble_sort_list(test_data))
+

@@ -11,7 +11,7 @@
 
 
 def sum_even_and_product_odd(arr: list):
-    # Initialize variables for the sum of even numbers and the product of odd numbers
+
     sum_product_list =[]
     sum_even = 0
     product_odd = 1
@@ -84,7 +84,7 @@ def plus_one(arr: list):
     arr[-1] += 1
 
     # Loop through the digits in reverse order
-    for i in range(len(arr) - 1, 0, -1):
+    for i in range(len(arr) - 1, 0, -1): #last number, go upto fist number,
         # Check for carry-over
         if arr[i] == 10:
             arr[i] = 0
@@ -98,6 +98,6 @@ def plus_one(arr: list):
         arr.append(0)
 
 # Example usage:
-input_digits = [1, 3 ,9]
+input_digits = [1, 2 ,9]
 plus_one(input_digits)
 print(input_digits)

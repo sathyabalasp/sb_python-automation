@@ -11,7 +11,7 @@ def browser_init(context):
     :param context: Behave context
     """
 
-    service = Service(executable_path='/Users/balamurugann/Automation_QA/sb_python_automation/chromedriver')
+    service = Service(executable_path='/Users/balamurugann/Automation_QA/sb_python-automation/chromedriver')
     context.driver = webdriver.Chrome(service=service)
     context.driver.maximize_window()
     ### OTHER BROWSERS ###
@@ -26,21 +26,21 @@ def browser_init(context):
     # context.driver = webdriver.Chrome(options=options, service=service)
 
     ## BROWSERSTACK ###
-    # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settingspip3 install -r requirements.txt
+    # # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settingspip3 install -r requirements.txt
     # bs_user = 'sathyaprabhasoun_cKy6sq'
     # bs_key = 'Co5KS7YR3GDYPpYi8Hkc'
     # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
     #
     # options = Options()
     # bstack_options = {
-    #     os: OS X
-    #     osVersion: Monterey
-    #     browserName: Chrome
-    #     browserVersion: latest
-    #     browserstackLocal: true
-    #     buildName: browserstack-build-1
-    #     projectName: BrowserStack Sample
-    #     'sessionName': scenario_name
+    #     "os": "OS X",
+    #     "osVersion": "Monterey",
+    #     "browserName": "Chrome",
+    #     "browserVersion": "latest",
+    #     "browserstackLocal": "true",
+    #     "buildName": "browserstack-build-1",
+    #     "projectName": "BrowserStack Sample",
+    #     "sessionName": "scenario_name"
     # }
     # options.set_capability('bstack:options', bstack_options)
     # context.driver = webdriver.Remote(command_executor=url, options=options)
