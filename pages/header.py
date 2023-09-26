@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import Select
 class Header(Page):
      SEARCH_FIELD = (By.ID, 'twotabsearchtextbox')
      SEARCH_BTN = (By.ID, 'nav-search-submit-button')
-     SELECT_PRODUT_HOODIE = (By.CSS_SELECTOR,'div[data-asin="B08WK5DL8M"]')
+     SELECT_PRODUT_HOODIE = (By.CSS_SELECTOR,'.s-image-padding')
      SELECT_PRODUCT = (By.CSS_SELECTOR, ".a-section.aok-relative.s-image-fixed-height")
      RETURN_ORDERS_ICON = (By.ID, 'nav-orders')
      SIGNIN_BTN = (By.CSS_SELECTOR, '#nav-signin-tooltip .nav-action-signin-button')

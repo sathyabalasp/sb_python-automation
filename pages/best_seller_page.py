@@ -6,6 +6,8 @@ class BestSellerPage(Page):
     TOP_MENU = (By.CSS_SELECTOR, 'div.celwidget.c-f ul a')
     TEXT_TOP_MENU = (By.ID, 'zg_banner_text')
 
+    def open_amazon_bestseller(self):
+        self.open_url('/gp/bestsellers')
 
     def bestseller_menu_links(self):
         self.find_element(*self.TOP_MENU)

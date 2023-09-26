@@ -8,7 +8,7 @@ TOP_MENU = (By.CSS_SELECTOR,'div.celwidget.c-f ul a')
 
 @when('Click on BestSeller')
 def open_best_seller(context):
-    context.app.header.click_best_seller_btn()
+    context.app.best_seller_page.open_amazon_bestseller()
 
 
 @then('Verify this page has {number} top menu')

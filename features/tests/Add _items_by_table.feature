@@ -1,6 +1,6 @@
 # Created by Sathyaprabha at 8/11/23
 Feature:Testing for amazon search for n_number product
-
+  @smoke
   Scenario Outline: testing adding a product to amazon search
     Given open amazon page
     When Search for <product>

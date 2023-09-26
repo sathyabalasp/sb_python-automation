@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
  # init driver
-service = Service(executable_path='/Users/svetlanalevinsohn/careerist/15-python-selenium-automation/chromedriver')
+service = Service(executable_path='/Users/balamurugann/Automation_QA/sb_python-automation/chromedriver')
 driver = webdriver.Chrome(service=service)
 
 driver.implicitly_wait(4)
